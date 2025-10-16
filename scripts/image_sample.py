@@ -26,7 +26,7 @@ def main():
     args = create_argparser().parse_args()
 
     dist_util.setup_dist()
-    logger.configure()
+    logger.configure(args.log_dir)
 
     if "consistency" in args.training_mode:
         distillation = True
@@ -132,6 +132,7 @@ def create_argparser():
         model_path="",
         seed=42,
         ts="",
+        log_dir=None,
     )
     defaults.update(model_and_diffusion_defaults())
     parser = argparse.ArgumentParser()

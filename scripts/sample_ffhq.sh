@@ -1,12 +1,12 @@
 python image_sample.py \
     --training_mode edm \
-    --batch_size 10 \
+    --batch_size 250 \
     --sigma_max 80 \
     --sigma_min 0.002 \
     --s_churn 0 \
     --steps 40 \
     --sampler heun \
-    --model_path /tmp/openai-2025-07-16-22-30-33-531285/ema_0.9999_010000.pt \
+    --model_path /home/bratosiewicz/consistency_models/models/ema_0.9999_210000.pt \
     --attention_resolutions 32,16,8  \
     --class_cond False \
     --dropout 0.1 \
@@ -14,8 +14,9 @@ python image_sample.py \
     --num_channels 192 \
     --num_head_channels 64 \
     --num_res_blocks 3 \
-    --num_samples 10 \
+    --num_samples 10000 \
     --resblock_updown True \
     --use_fp16 True \
     --use_scale_shift_norm True \
-    --weight_schedule karras
+    --weight_schedule karras \
+    --log_dir /home/bratosiewicz/consistency_models/samples/210k_cm_eval

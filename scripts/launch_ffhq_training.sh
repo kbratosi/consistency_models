@@ -2,8 +2,8 @@ nohup python edm_train.py \
     --attention_resolutions 32,16,8 \
     --class_cond False \
     --use_scale_shift_norm True \
-    --dropout 0.1 \
-    --ema_rate 0.999,0.9999,0.9999432189950708 \
+    --dropout 0.0 \
+    --ema_rate 0.9999 \
     --global_batch_size 4096 \
     --batch_size 48 \
     --image_size 64 \
@@ -18,4 +18,5 @@ nohup python edm_train.py \
     --weight_schedule karras \
     --data_dir /home/bratosiewicz/data/ffhq/train \
     --log_interval 100 \
-    > training.log 2>&1 &
+    --log_dir /home/bratosiewicz/consistency_models/out/10-12-ffhq \
+    > 10-12_training.log 2>&1 &
